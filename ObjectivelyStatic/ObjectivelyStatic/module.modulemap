@@ -1,0 +1,4 @@
+module ObjectivelyStatic {
+    umbrella header "ObjectivelyStatic.h"
+	export *
+}
