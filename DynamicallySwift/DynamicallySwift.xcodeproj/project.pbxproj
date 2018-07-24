@@ -302,6 +302,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(CONFIGURATION_BUILD_DIR)/libObjectivelyStatic.a",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.tinyrobot.DynamicallySwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -330,6 +334,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(CONFIGURATION_BUILD_DIR)/libObjectivelyStatic.a",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.tinyrobot.DynamicallySwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
