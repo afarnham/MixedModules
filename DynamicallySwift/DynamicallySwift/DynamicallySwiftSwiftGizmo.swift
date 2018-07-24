@@ -7,14 +7,9 @@
 //
 
 import UIKit
-import ObjectivelyStatic
 
 open class DynamicallySwiftSwiftGizmo: NSObject {
-    open func doSomething() {
-        print("Doing something in DynamicallySwiftSwiftGizmo")
-        
-        //initialize and use ObjcGizmo so symbols get linked into the dynamic library
-        let otherGizmo = ObjcGizmo()
-        _ = NSStringFromClass(type(of: otherGizmo))
+    @objc open func doSomething() {
+        NSLog("Doing something in DynamicallySwiftSwiftGizmo")
     }
 }

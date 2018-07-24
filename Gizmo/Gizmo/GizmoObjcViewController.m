@@ -7,6 +7,8 @@
 //
 
 #import "GizmoObjcViewController.h"
+#import <ObjectivelyStatic/ObjectivelyStatic.h>
+#import <DynamicallySwift/DynamicallySwift.h>
 
 @interface GizmoObjcViewController ()
 
@@ -14,11 +16,35 @@
 
 @implementation GizmoObjcViewController
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.title = @"ObjC";
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor grayColor];
+    self.title = @"ObjC";
 }
 
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"-----------Objective-C---------------");
+    
+    ObjcGizmo *staticObjcGizmo = [[ObjcGizmo alloc] init];
+    DynamicallySwiftObjcGizmo *dynamicObjGizmo = [[DynamicallySwiftObjcGizmo alloc] init];
+    DynamicallySwiftSwiftGizmo *dynamicSwiftGizmo = [[DynamicallySwiftSwiftGizmo alloc] init];
+    
+    [staticObjcGizmo doSomething];
+    [dynamicObjGizmo doSomething];
+    [dynamicSwiftGizmo doSomething];
+}
 /*
 #pragma mark - Navigation
 

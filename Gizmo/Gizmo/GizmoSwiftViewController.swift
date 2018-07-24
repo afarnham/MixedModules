@@ -15,8 +15,24 @@ class GizmoSwiftViewController: UIViewController {
     let dynamicObjGizmo = DynamicallySwiftObjcGizmo()
     let dynamicSwiftGizmo = DynamicallySwiftSwiftGizmo()
     
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        
+        self.title = "Swift"
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .darkGray
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        NSLog("-----------Swift---------------")
         staticObjcGizmo.doSomething()
         dynamicObjGizmo.doSomething()
         dynamicSwiftGizmo.doSomething()
